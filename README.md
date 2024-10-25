@@ -27,9 +27,9 @@ El componente `Nav` es la barra de navegación principal de la aplicación, que 
 import Nav from "@/components/Nav";
 
 <Nav />
+```
 
-
-## 2. Footer
+### 2. Footer
 
 El componente **Footer** es el pie de página, donde se encuentran enlaces a las redes sociales del usuario y enlaces de navegación adicionales. Además, muestra un mensaje de derechos de autor en la parte inferior.
 
@@ -41,6 +41,7 @@ El componente **Footer** es el pie de página, donde se encuentran enlaces a las
 import Footer from "@/components/Footer";
 
 <Footer />
+```
 
 ## 3. ProjectCard
 
@@ -56,9 +57,9 @@ import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 
 <ProjectCard project={projectData} />
+```
 
-
-## 4. ProjectList
+### 4. ProjectList
 
 **ProjectList** es un contenedor de tarjetas de proyectos. Recibe un array de proyectos y utiliza **ProjectCard** para mapear y renderizar cada uno.
 
@@ -69,9 +70,9 @@ import ProjectCard from "@/components/ProjectCard";
 import ProjectList from "@/components/ProjectList";
 
 <ProjectList projects={projectsData} />
+```
 
-
-## 5. Contact
+### 5. Contact
 
 **Contact** es el componente que permite a los usuarios enviar mensajes directamente a través de un formulario de contacto. Utiliza **Formspree** para manejar el envío de formularios de forma sencilla y efectiva.
 
@@ -82,9 +83,9 @@ import ProjectList from "@/components/ProjectList";
 import Contact from "@/components/Contact";
 
 <Contact />
+```
 
-
-## Conclusión
+### Conclusión
 
 Este portafolio es un ejemplo de cómo utilizar **Next.js** y **Tailwind CSS** para crear aplicaciones web modernas y responsivas. Se enfoca en la reutilización de componentes y en una experiencia de usuario óptima, aprovechando tecnologías como **Formspree** para facilitar la comunicación.
 
