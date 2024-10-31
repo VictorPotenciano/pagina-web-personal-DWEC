@@ -9,13 +9,11 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Fragment } from "react";
+import { estilosNavegacion, rutas } from "@/data/rutasData";
+import NavLink from "./NavLink";
 
 const Nav = () => {
-  // Obtiene la ruta actual para aplicar estilos condicionalmente
-  const pathname = usePathname();
-
   return (
     // Contenedor principal
     <Popover className="mx-auto flex items-center border-b-2 px-6 py-2 h-24">
@@ -35,47 +33,14 @@ const Nav = () => {
 
           {/* Navegación principal para pantallas grandes */}
           <div className="grow">
-            <div className="hidden sm:flex items-center justify-center gap-2 md:gap-8 text-xl">
-              <Link
-                href="/"
-                className={`hover:text-gray-500 ${
-                  pathname === "/"
-                    ? "font-bold underline underline-offset-4"
-                    : ""
-                }`}
-              >
-                Inicio
-              </Link>
-              <Link
-                href="/about"
-                className={`hover:text-gray-500 ${
-                  pathname === "/about"
-                    ? "font-bold underline underline-offset-4"
-                    : ""
-                }`}
-              >
-                Sobre Mi
-              </Link>
-              <Link
-                href="/projects"
-                className={`hover:text-gray-500 ${
-                  pathname === "/projects"
-                    ? "font-bold underline underline-offset-4"
-                    : ""
-                }`}
-              >
-                Proyectos
-              </Link>
-              <Link
-                href="/contact"
-                className={`hover:text-gray-500 ${
-                  pathname === "/contact"
-                    ? "font-bold underline underline-offset-4"
-                    : ""
-                }`}
-              >
-                Contacto
-              </Link>
+            <div className="hidden sm:flex items-center justify-center gap-2 sm:gap-6 md:gap-8  text-xl">
+              {Object.keys(rutas).map((key: string) => (
+                <NavLink
+                  ruta={key}
+                  estiloActivo={estilosNavegacion.nav.estiloActivo}
+                  estiloBase={estilosNavegacion.nav.estilo}
+                />
+              ))}
             </div>
           </div>
 
@@ -126,42 +91,14 @@ const Nav = () => {
                   {/* Navegación del menú desplegable */}
                   <div className="mt-6">
                     <nav className="grid gap-y-8">
-                      <Link
-                        href="/"
-                        onClick={close}
-                        className={`focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 px-2 ${
-                          pathname === "/" ? "font-bold" : ""
-                        }`}
-                      >
-                        Inicio
-                      </Link>
-                      <Link
-                        href="/about"
-                        onClick={close}
-                        className={`focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 px-2 ${
-                          pathname === "/about" ? "font-bold" : ""
-                        }`}
-                      >
-                        Sobre Mi
-                      </Link>
-                      <Link
-                        href="/projects"
-                        onClick={close}
-                        className={`focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 px-2 ${
-                          pathname === "/projects" ? "font-bold" : ""
-                        }`}
-                      >
-                        Proyectos
-                      </Link>
-                      <Link
-                        href="/contact"
-                        onClick={close}
-                        className={`focus:outline-none focus:ring-2 focus:ring-inset focus:ring-gray-500 px-2 ${
-                          pathname === "/contact" ? "font-bold" : ""
-                        }`}
-                      >
-                        Contacto
-                      </Link>
+                      {Object.keys(rutas).map((key: string) => (
+                        <NavLink
+                          ruta={key}
+                          estiloActivo={estilosNavegacion.ham.estiloActivo}
+                          estiloBase={estilosNavegacion.ham.estilo}
+                          closeAction={close}
+                        />
+                      ))}
                     </nav>
                   </div>
                 </div>

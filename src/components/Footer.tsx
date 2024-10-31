@@ -1,15 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import { SiGithub, SiLinkedin } from "react-icons/si";
-import { usePathname } from "next/navigation";
+import NavLink from "./NavLink";
+import { estilosNavegacion, rutas } from "@/data/rutasData";
 
 export default function Footer() {
-  // Obtiene la ruta actual para aplicar estilos condicionalmente
-  const pathname = usePathname();
-
   return (
-    // Contenedor principal 
+    // Contenedor principal
     <footer className="bg-black text-white">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         {/* Contenedor de navegación y redes sociales */}
@@ -18,60 +15,16 @@ export default function Footer() {
           <div className="space-y-8 xl:col-span-1">
             <nav className="-mx-5 -my-2">
               <div className="flex flex-wrap justify-center">
-                {/* Enlace a Inicio, con estilo dinámico si está en la ruta actual */}
+                {/* Enlaces de navegación */}
                 <div className="px-5 py-2">
-                  <Link
-                    href="/"
-                    className={`text-base text-gray-300 hover:text-white ${
-                      pathname === "/"
-                        ? "font-bold text-gray-500 underline underline-offset-4"
-                        : ""
-                    }`}
-                  >
-                    Inicio
-                  </Link>
-                </div>
-
-                {/* Enlace a Sobre mí */}
-                <div className="px-5 py-2">
-                  <Link
-                    href="/about"
-                    className={`text-base text-gray-300 hover:text-white ${
-                      pathname === "/about"
-                        ? "font-bold text-gray-500 underline underline-offset-4"
-                        : ""
-                    }`}
-                  >
-                    Sobre mí
-                  </Link>
-                </div>
-
-                {/* Enlace a Proyecto */}
-                <div className="px-5 py-2">
-                  <Link
-                    href="/projects"
-                    className={`text-base text-gray-300 hover:text-white ${
-                      pathname === "/projects"
-                        ? "font-bold text-gray-500 underline underline-offset-4"
-                        : ""
-                    }`}
-                  >
-                    Proyecto
-                  </Link>
-                </div>
-
-                {/* Enlace a Contacto */}
-                <div className="px-5 py-2">
-                  <Link
-                    href="/contact"
-                    className={`text-base text-gray-300 hover:text-white ${
-                      pathname === "/contact"
-                        ? "font-bold text-gray-500 underline underline-offset-4"
-                        : ""
-                    }`}
-                  >
-                    Contacto
-                  </Link>
+                  {Object.keys(rutas).map((key: string) => (
+                    <NavLink
+                      ruta={key}
+                      estiloActivo={estilosNavegacion.footer.estiloActivo}
+                      estiloBase={estilosNavegacion.nav.estilo}
+                      closeAction={close}
+                    />
+                  ))}
                 </div>
               </div>
             </nav>

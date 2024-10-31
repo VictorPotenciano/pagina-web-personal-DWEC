@@ -5,3 +5,8 @@ export interface Project {
     imageSrc:string;
     link:string;
 }
+
+export interface Rutas {
+    path: string;
+    name: string;
+  };
