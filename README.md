@@ -2,6 +2,13 @@
 
 Este proyecto es una aplicación de portafolio construida con **Next.js** y **Tailwind CSS**. Contiene múltiples componentes reutilizables que facilitan la navegación y organización de contenido, como proyectos realizados, información personal y opciones de contacto.
 
+Para poder instalar todas las dependecias necesarios utliza el comando:
+    npm install
+
+Para poder arrancar el proyecto utiliza:
+    npm run dev
+
+
 ## Tecnologías Principales
 
 - **Next.js**: Marco de desarrollo de React para la creación de aplicaciones web rápidas y optimizadas.
