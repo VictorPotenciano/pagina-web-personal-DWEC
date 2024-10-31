@@ -2,6 +2,10 @@
 
 Este proyecto es una aplicación de portafolio construida con **Next.js** y **Tailwind CSS**. Contiene múltiples componentes reutilizables que facilitan la navegación y organización de contenido, como proyectos realizados, información personal y opciones de contacto.
 
+Clona el ropsitorio en la carpeta que quieras:
+  git clone https://github.com/VictorPotenciano/pagina-web-personal-DWEC
+  cd pagina-web-personal-DWEC
+
 Para poder instalar todas las dependecias necesarios utliza el comando:
     npm install
 
@@ -29,6 +33,17 @@ El componente **Nav** es la barra de navegación principal de la aplicación, qu
 - **Menú responsive**: Usa `Popover` y `PopoverPanel` de **Headless UI** para implementar el menú desplegable en pantallas pequeñas.
 - **Imagen del logo**: Incluye el logo de la aplicación con `next/image`.
 - **Links**: Cada enlace resalta la página activa mediante subrayado y cambio de color.
+
+### 2. NavLink
+
+Este componente representa cada enlace en la navegación. Se encarga de aplicar estilos condicionales dependiendo de si el enlace está activo o no.
+
+- **ruta**: La clave de la ruta que se utiliza para obtener el path y el nombre del enlace desde el objeto `rutas`.
+- **estiloActivo**:  Clase CSS que se aplica cuando el enlace está activo.
+- **estiloBase**: Clase CSS base que se aplica a todos los enlaces.
+- **closeAction**: Función opcional que se ejecuta al hacer clic en el enlace, utilizada para cerrar el menú desplegable.
+
+
 
 ### 2. Footer
 

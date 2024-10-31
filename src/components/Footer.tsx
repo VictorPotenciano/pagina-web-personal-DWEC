@@ -7,21 +7,21 @@ import { estilosNavegacion, rutas } from "@/data/rutasData";
 export default function Footer() {
   return (
     // Contenedor principal
-    <footer className="bg-black text-white">
+    <footer className="bg-black text-white ">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         {/* Contenedor de navegación y redes sociales */}
         <div className="xl:flex xl:justify-between">
           {/* Sección de navegación con enlaces a diferentes páginas */}
           <div className="space-y-8 xl:col-span-1">
             <nav className="-mx-5 -my-2">
-              <div className="flex flex-wrap justify-center">
-                {/* Enlaces de navegación */}
-                <div className="px-5 py-2">
+              <div className="flex flex-col items-start space-y-4">
+                <div className="flex gap-3 px-5 py-2">
+                  {/* Enlaces de navegación */}
                   {Object.keys(rutas).map((key: string) => (
                     <NavLink
                       ruta={key}
                       estiloActivo={estilosNavegacion.footer.estiloActivo}
-                      estiloBase={estilosNavegacion.nav.estilo}
+                      estiloBase={estilosNavegacion.footer.estilo}
                       closeAction={close}
                     />
                   ))}
